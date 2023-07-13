@@ -4,13 +4,13 @@ import java.util.ArrayList;
 
  class Task {
 
-	    private String name;
+	    private String name;//private data member
 
-	    public Task(String name) {
+	    public Task(String name) { // public method
 	        this.name = name;
 	    }
 
-	    public String getName() {
+	    public String getName() { //public method
 	        return name;
 	    }
 	}
@@ -30,7 +30,7 @@ import java.util.ArrayList;
 	    public static  boolean findTaskByName(String name, ArrayList<Task> tasks) {
 	        for (Task task : tasks) {
 	            if (task.getName().equals(name)) {
-	                return true; // This line return the method
+	                return true; 
 	            }
 	        }
 	        return false;
