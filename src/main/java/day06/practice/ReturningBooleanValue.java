@@ -23,14 +23,14 @@ import java.util.ArrayList;
 	        tasks.add(new Task("Washing Clothes"));
 	        tasks.add(new Task("Taking the dog for Walking"));
 
-	        boolean exists = findTaskByName("Cleaning ", tasks);
+	        boolean exists = findTaskByName("Cleaning House", tasks); 
 	        System.out.println("Task Status : " + exists);
 	    }
 
 	    public static  boolean findTaskByName(String name, ArrayList<Task> tasks) {
 	        for (Task task : tasks) {
 	            if (task.getName().equals(name)) {
-	                return true;
+	                return true; // This line return the method
 	            }
 	        }
 	        return false;
