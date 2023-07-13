@@ -18,7 +18,7 @@ class Car {
 	}
 
 	public void printStates() {
-		System.out.println(" speed:" + speed + " gear:" + gear);
+		System.out.println(" speed:" + speed + " gear:" + gear );
 	}
 }
 

@@ -1,7 +1,8 @@
 package day02.solved;
 
 class Calculator1 {
-	 public int add(int a, int b) {
+	
+	    public int add(int a, int b) {
 	        return a + b;
 	    }
 	    
@@ -16,11 +17,13 @@ class Calculator1 {
 }
 
 public class Calculator{
+	
 	public static void main(String[] args) {
 	
 	Calculator1 calc = new Calculator1();
 	System.out.println(calc.add(2, 3));           // Output: 5
 	System.out.println(calc.add(2.5, 3.7));       // Output: 6.2
-	System.out.println(calc.add("Hello", "World"));  // Output: HelloWorld
+	System.out.println(calc.add("Hello ", "World"));  // Output: HelloWorld
+	
   }
 }
