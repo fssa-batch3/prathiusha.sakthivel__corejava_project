@@ -4,28 +4,26 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RemovingDuplicates {
+	
 	public static void main(String[] args) {
 		
-		List<String> cityList = new ArrayList<String>();
-		
+		List<String> cityList = new ArrayList<>();
 		cityList.add("Chennai");
 		cityList.add("Bangalore");
 		cityList.add("Mumbai");
 		cityList.add("Mumbai");
-		
-		List<String> duplicateCity = new ArrayList<String>();
 
-  
-        for (String cityname : cityList) {
-           
-            if (!duplicateCity.contains(cityname)) {
-            	duplicateCity.add(cityname);
-            }
-        }
-        
-        for (String city : duplicateCity) {
-            System.out.println(city);
-        }
+		try {
+
+			List<String> newList = RemovingDuplicatesValidator.removeDuplicates(cityList);
+
+			System.out.println(newList);
+
+		} catch (IllegalArgumentException e) {
+
+			System.out.println(e.getMessage());
+		}
+
 	}
 
 }
