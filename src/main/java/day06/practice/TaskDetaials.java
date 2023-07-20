@@ -48,7 +48,7 @@ public class TaskDetaials {
 		taskList.add(new Task("wakeupearly", 1));
 		taskList.add(new Task("Walking", 2));
 		taskList.add(new Task("Office", 4));
-		taskList.add(new Task("Brackfast", 3));
+		taskList.add(new Task("Breakfast", 3));
 
 		for (Task task: taskList) {
 			System.out.println("TaskName: " + task.getName());
