@@ -38,13 +38,16 @@ import java.util.function.BooleanSupplier;
 	    }
 
 	    public static  boolean findTaskByName(String name, ArrayList<Task> tasks) {
+	    	
 	        for (Task task : tasks) {
 	            if (task.getName().equals(name)) {
 	                return true; 
 	            }
 	        }
+	        
 	        return false;
 	    }
+	    
 	}
 
 

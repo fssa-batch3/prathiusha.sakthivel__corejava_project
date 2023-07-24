@@ -2,9 +2,10 @@ package day03.practice;
 
 class Employee {
 	 
-	   private int id;
-	    private String name;
-	    public Employee(int id, String name) {
+	    private int id;//private data member
+	    private String name;//private data member
+	    
+	    public Employee(int id, String name) {//constructor to access the attribute
 	        this.id = id;
 	        this.name = name;
 	        System.out.println("id="+this.id+", "+"name="+this.name);

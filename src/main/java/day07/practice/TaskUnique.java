@@ -55,7 +55,7 @@ public class TaskUnique {
 		String nameregex = "^[a-zA-Z]{2,50}$";
 		Pattern pattern = Pattern.compile(nameregex);
 		Matcher matcher = pattern.matcher(name);
-		Boolean isMatch = matcher.matches();
+		boolean isMatch = matcher.matches();
 
 		if (!isMatch) {
 			throw new IllegalArgumentException("The  task name should be  minimum 2 letters and maximum 50 letters");

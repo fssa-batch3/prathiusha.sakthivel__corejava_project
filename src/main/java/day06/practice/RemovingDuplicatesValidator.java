@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RemovingDuplicatesValidator {
+	
 	public static List<String> removeDuplicates(List<String> cityList) throws IllegalArgumentException {
 
 		if (cityList == null || cityList.size() == 0) {

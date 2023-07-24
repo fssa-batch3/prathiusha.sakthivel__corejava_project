@@ -6,23 +6,27 @@ import org.junit.jupiter.api.Test;
 public class TestTaskDetaials {
 	// We check the input task name is valid 
 		@Test
-		
 		public void testvalid() {
-			Assertions.assertTrue(Task.taskName("wakeupearly"));
+			Assertions.assertTrue(TaskDetaials.taskName("wakeupearly"));
 		}
 		
 //		we check the input task is invalid
 		@Test
 		public void testInvalid() {
 			try {
-				Task.taskName("to");
+				TaskDetaials.taskName("t");
 				Assertions.fail("Validate failed");
 			} catch (IllegalArgumentException ex) {
-				Assertions.assertEquals("The  task name should be  minimum 2 letters and maximum 200 letters", ex.getMessage());
+				Assertions.assertEquals("The task name should be minimum 2 letters and maximum 100 letters", ex.getMessage());
 			}
+			
+		}
+		
+		@Test
+		public void testInvail1() {
 //			we check the input empty or null 
 			try {
-				Task.taskName(null);
+				TaskDetaials.taskName(null);
 				Assertions.fail("Validate failed");
 			}
 			catch(IllegalArgumentException e) {
@@ -35,7 +39,7 @@ public class TestTaskDetaials {
 		@Test
 		public void testpriority() {
 
-			Assertions.assertTrue(Task.taskpriority(1));
+			Assertions.assertTrue(TaskDetaials.taskpriority(1));
 
 		}
 
@@ -45,7 +49,7 @@ public class TestTaskDetaials {
 		public void testInValidpriority() {
 
 			try {
-				Task.taskpriority(0);
+				TaskDetaials.taskpriority(0);
 				Assertions.fail("Validate failed");
 			} catch (IllegalArgumentException e) {
 				Assertions.assertEquals("InValid priority", e.getMessage());

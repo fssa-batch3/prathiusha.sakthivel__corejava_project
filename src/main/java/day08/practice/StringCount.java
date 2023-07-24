@@ -4,9 +4,25 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class StringCount {
+	
 	public static void main(String[] args) {
 		
 		String[] arrNames= {"Ram", "Ram", "Superman", "spider", "hey", "hello", "hey", "Spider"};
+		
+		countWords(arrNames);
+		
+	}
+	
+
+	public static boolean countWords(String[] arrNames) throws IllegalArgumentException {
+		
+		if(arrNames == null) {
+			throw new IllegalArgumentException("String Array cann't be Null");
+		}
+		
+		if(arrNames.length == 0) {
+			throw new IllegalArgumentException("String Array cann't be Empty");
+		}
 		
 		Map<String,Integer> countMap = new HashMap<String,Integer>();
 		
@@ -16,9 +32,10 @@ public class StringCount {
 			
 			if(countMap.get(word)== null) {
 				countMap.put(word,1);
+				
 			}
 			else {
-				int count = countMap.get(word) ;
+				int count = countMap.get(word);
 				count++;
 				countMap.put(word,count);
 
@@ -27,10 +44,7 @@ public class StringCount {
 
 		}
 		System.out.println(countMap);
-
-	}
-
-	public static Map<String, Integer> countWords(String[] arrNames) {
-		return null;
+		
+		return true;
 	}
 }

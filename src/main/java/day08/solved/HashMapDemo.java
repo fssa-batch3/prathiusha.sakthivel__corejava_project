@@ -1,12 +1,13 @@
 package day08.solved;
 
-import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeMap;
 
 public class HashMapDemo {
 	public static void main(String[] args) {
 
 		// Task: store department name and no of employees working in the department
-		HashMap<String, Integer> deptMap = new HashMap<String, Integer>();
+		Map<String, Integer> deptMap = new TreeMap<String, Integer>();
 		deptMap.put("HR", 5);
 		deptMap.put("ADMIN", 10);
 		deptMap.put("DEVELOPERS", 300);

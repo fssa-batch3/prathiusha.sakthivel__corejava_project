@@ -1,44 +1,78 @@
 package day08.practice;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
+import java.util.TreeMap;
 
 public class EmployeeCount {
-	public static void main(String[] args) {
-		Scanner scan = new Scanner(System.in);
-		Map<String, List<String>> departmentEmployees = new HashMap<>();
-		for (int i = 0; i < 5; i++) {
-			System.out.println("Enter input like :Hr,Name");
-			String str = scan.nextLine();
-			if (str == null || "".equals(str)) {
+	public static boolean depnameofemployees(ArrayList<String> depOfEmp) throws IllegalArgumentException {
 
-				throw new IllegalArgumentException("Input can't be Empty or Null");
+		try (Scanner sc = new Scanner(System.in)) {
+			if (depOfEmp == null) {
+				throw new IllegalArgumentException("Given ArrayList Cannot be Null");
 			}
 
-			String[] arrstr = str.split(",");
+			Map<String, List<String>> depMap = new TreeMap<>();
 
-			if (arrstr.length < 2 || arrstr.length > 2) {
-				throw new IllegalArgumentException("Input must have department and employee name");
+			System.out.println("Enter Input Like: HR, Name");
+
+			for (int i = 0; i < depOfEmp.size(); i++) {
+				String str = depOfEmp.get(i);
+
+				if (str == null || "".equals(str.trim())) {
+					throw new IllegalArgumentException("Input cannot be Empty or Null");
+				}
+
+				String[] arrDepName = str.split(",");
+
+				if (arrDepName.length < 2 || arrDepName.length > 2) {
+					throw new IllegalArgumentException("Input Must have Department and Employee Name");
+				}
+
+				if (depMap.get(arrDepName[0]) == null) {
+					depMap.put(arrDepName[0], new ArrayList<>());
+					depMap.get(arrDepName[0]).add(arrDepName[1]);
+				} else {
+					depMap.get(arrDepName[0]).add(arrDepName[1]);
+				}
+
 			}
 
-			if (departmentEmployees.get(arrstr[0]) == null) {
-				departmentEmployees.put(arrstr[0], new ArrayList<>());
-				departmentEmployees.get(arrstr[0]).add(arrstr[1]);
-			} else {
-				departmentEmployees.get(arrstr[0]).add(arrstr[1]);
+			for (Map.Entry<String, List<String>> e : depMap.entrySet()) {
+
+				String depName = e.getKey();
+				Collections.sort(e.getValue());
+
+				StringBuilder sb = new StringBuilder();
+
+				for (int i = 0; i < e.getValue().size(); i++) {
+
+					if (i == 0) {
+						sb.append(e.getValue().get(i));
+					} else {
+						sb.append(", " + e.getValue().get(i));
+					}
+
+				}
+
+				System.out.println(depName + ": " + sb);
+
 			}
 
+			sc.close();
 		}
-		System.out.println(departmentEmployees);
-		scan.close();
+
+		return true;
 
 	}
 
-	public Object getDepartmentEmployees() {
-		return null;
+	public static void main(String[] args) {
+
+		depnameofemployees(new ArrayList<String>());
+
 	}
 
 }
